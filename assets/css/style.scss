@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;800&family=Poppins&display=swap');
+
+$themeColor : #FFFFFF;
+$accentPrimary: #96bb7c;
+$accentdangerPrimary: #b45454;
+$accentPrimaryLight: rgb(198, 220, 192);
+$accentSecondary: #00334E;
+$accentTertiary: #8D93AB;
+
+$fontPrimary:'Poppins', sans-serif;
+$fontSecondary: 'Plus Jakarta Sans', sans-serif;
+@mixin flex($direction) {
+  display: flex;
+  flex-flow: $direction wrap;
+  // justify-content: space-between;
+  
+}
+@mixin center($width){
+  margin: auto;
+  width: $width;
+  padding: 10px;
+}
+@mixin nav {
+  padding: 0.2rem;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  li {
+    float: left;
+   a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+      &:hover{
+        background-color: $accentPrimary;
+        border-radius: 10px;
+        color: black;
+      }
+    }
+  }
+}
+@mixin button($backcolor, $color){
+  width: 144px;
+  height: 42px;
+  border-radius: 25px;
+  letter-spacing: 0.05rem;
+  font-size: 0.8rem;
+  text-align: center;
+  align-self: center; 
+  border: none;
+  font-weight: bold;
+  background-color: $backcolor;
+  color: $color;
+  
+}
+
+html {
+  box-sizing:border-box;
+
+}
+*, *::before, *::after {
+  box-sizing:inherit;
+}
+body {
+  font:normal 1em/1.5em $fontPrimary;
+  background-color: $themeColor;
+  margin:0 auto;
+  overflow: scroll;
+  letter-spacing: 0.1em;
+  background-color: $accentPrimaryLight;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.hidden{
+  display:none;
+}
+a{
+  text-decoration: none;
+}
+.mealplan_form, .meals{
+  border: 2px solid black;
+  padding:2rem;
+  background-color: #edeff7;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  justify-content: space-between;
+  @include flex(row);
+  div{
+    max-width: 18vw;
+  }
+}
+.mealplan{
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+li{
+  list-style: none;
+}
+
+.home_menu{
+  @include nav;
+  height: 10vh;
+  background-color: $accentPrimaryLight;
+}
+.fav_menu{
+  @include nav;
+  height: 10vh;
+  background-color: transparent;
+}
+#site-name{
+  color: $accentPrimary !important;
+  font-weight: bold;
+  font-size: large;
+}
+img{
+  object-fit: contain;
+}
+
+input[type=submit]{
+  @include button($accentPrimary, white);
+  cursor: pointer;
+  &:hover{
+    background-color: rgb(95, 134, 68)
+  }
+}
+a[href*='delete']{
+  @include button($accentdangerPrimary, white);
+  padding-top: 0.5rem;
+  &:hover{
+    background-color: rgb(126, 42, 42);
+  }
+}
+
+#bmr_form label{
+  width: 38%;
+  margin-bottom: 1rem;
+}
+#bmr_form input, #bmr_form select{
+  width: 57%;
+  margin-bottom: 1rem;
+}
+#bmr_form{
+  width: 530px;
+  height:fit-content;
+  @include flex(row);
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+.bmr{
+  @include flex(row);
+  background-color: $accentPrimaryLight;
+  justify-content: space-between;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  padding-bottom: 1rem
+}
+button[type=submit]{
+  @include button($accentTertiary, white);
+  margin-bottom: 1rem;
+  align-items: center;
+}
+.bmr h3{
+  margin-bottom: 1rem;
+}
+.footer{
+  @include flex(row);
+  margin: auto;
+  align-items: center;
+  background-color: $accentTertiary;
+}
+
+.logos ul li{
+  display: inline;
+}
+.footer .logos ul , .footer .copyright{
+  @include center(80%)
+}
+
+.footer_container{
+  @include center(50%)
+
+}
+.logos{
+  @include center(60%)
+
+}
+h2{
+  padding-left: 2rem;
+  padding-top: 2rem;
+}
+#site-name{
+  font-size: 1.5rem;
+}
