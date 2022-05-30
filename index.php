@@ -129,7 +129,7 @@ if (isset($_POST['save_to_fave'])) {
           $bmr = calcBmr($weight, $height, $age, $gender, $activity, $goal);
 
           //Get the food plan json with the passed bmr
-          $food_plan = getDayMeals($bmr);
+          $food_plan = getDayMeals($bmr, $apiKey);
         }
 
         //Store the meals object
@@ -138,9 +138,9 @@ if (isset($_POST['save_to_fave'])) {
         $dinner = $food_plan->{'meals'}[2];
 
         //Get the Image info with the passed id and Store
-        $breakfast_Img = getMealInfo($breakfast->{'id'});
-        $lunch_Img = getMealInfo($lunch->{'id'});
-        $dinner_Img = getMealInfo($dinner->{'id'});
+        $breakfast_Img = getMealInfo($breakfast->{'id'}, $apiKey);
+        $lunch_Img = getMealInfo($lunch->{'id'}, $apiKey);
+        $dinner_Img = getMealInfo($dinner->{'id'}, $apiKey);
         ?>
         <!-- Output the bmr -->
         <?php echo '<h4>You should consume ' . $bmr . ' Calories a day.</h4>' ?>
