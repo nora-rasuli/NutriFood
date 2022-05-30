@@ -15,6 +15,7 @@ Finally, eploy the project to the server.
 
 #### Live website
 [NutriFood](https://nirarasuli.com/Projects/NutriFood/)
+![NutriFood](https://user-images.githubusercontent.com/90394300/171059523-1883662f-2fb0-4e2e-b532-ac374069a4d3.JPG)
 
 #### TODO
 Add individual user account, and Login.
